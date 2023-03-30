@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: rotate(45deg);
+    }
+
+    .logo2 {
+      position: absolute;
+      left: 100px;
+      filter: blur(2px);
+    }
+ 
+  </style>
+</head>
+<body>
+  <img class="logo" width="100" src="https://i1.sndcdn.com/avatars-5YbWvN7WQLwUzlVC-mEDFyQ-t500x500.jpg" alt="">
+     
+  <img class="logo2" width="100" src="https://i1.sndcdn.com/avatars-5YbWvN7WQLwUzlVC-mEDFyQ-t500x500.jpg" alt="">
+     
+
+  <p class="name-para"></p>
+  <script>
+    let name = 'zevan';
+    let namePara = document.querySelector('.name-para')
+    let imageNum = 10;
+
+    function makeImageGrow() {
+      document.querySelector('.logo').style.transform = 'scale(2)'
+    }
+
+    document.onkeyup = function(event) {
+      console.log(event.key);
+      namePara.innerText += ' ' + event.key
+    };
+
+    document.onpointermove = function(event) {
+      document.querySelector('.logo2').style.left = event.clientX + 'px'
+    }
+
+    /*
+    // right way to do it...normally we don't use onclick, onpointermove
+    // because you can only do it once.. in one place
+
+    document.addEventListener('keyup', event => {
+      console.log(event.key);
+      namePara.innerText += ' ' + event.key
+    });
+    */
+
+    namePara.innerText = name //'name'
+    namePara.onclick = function() {
+      makeImageGrow();
+      console.log('CLICK!');
+    }
+
+    for (let i = 0; i < imageNum; i++) {
+      console.log(i)
+      namePara.innerText += i
+    }
+
+    console.log(name);
+  </script>
+</body>
+</html>

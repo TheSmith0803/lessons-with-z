@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    * {
+      margin: 0; padding: 0;
+      outline: 1px solid red;
+      
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+
+    div {
+      position: relative;
+    }
+    .col {
+      /* hack! */
+      width: 50%;
+      float: left;
+      min-height: 300px;
+      padding: 20px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+     
+    }
+    nav a {
+      color: white;
+      font-size: 20px;
+    }
+
+    h1 {
+      padding: 20px;
+    }
+    h1:after {
+      font-size: 1rem;
+      color: gray;
+      content: 'this is an after'
+    }
+
+    main {
+      height: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      position: relative;
+      height: 20%;
+      overflow: hidden;
+      min-height: 115px;
+    }
+    .columns {
+      height: 70%;
+    }
+    header img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+   @media only screen and (max-width: 700px) {
+      nav a {
+        color: white;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="https://i1.sndcdn.com/avatars-5YbWvN7WQLwUzlVC-mEDFyQ-t500x500.jpg" alt="">
+      
+      <h1>Emmet</h1>
+
+      
+      <nav>
+        <a href="">hello</a>
+        <a href="">hello</a>
+        <a href="">hello</a>
+        <a href="">hello</a>
+        <a href="">hello</a>
+      </nav>
+    </header>
+    <div class="columns">
+      <div class="col">one</div>
+      <div class="col">two</div>
+    </div>
+    <footer>
+      @2023
+    </footer>
+  </main>
+</body>
+</html>
